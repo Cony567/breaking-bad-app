@@ -16,12 +16,13 @@ function App() {
     const url = 'https://www.breakingbadapi.com/api/quote/random';
     const res = await fetch(url);
     const [nuevaFrase] = await res.json();
-    setLoading(false);
+    
     const { quote:texto, author:autor } = nuevaFrase;
     setFrase({
       texto,
       autor
     });
+    setLoading(false);
   }
   useEffect(()=>{
     actualizacionFrase();
